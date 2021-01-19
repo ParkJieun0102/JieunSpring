@@ -67,9 +67,38 @@ public class BDao {
 				e.printStackTrace();
 			}
 		}
-		return dtos;
-		
+		return dtos;	
 	}
 	
+	
+	public void write(String bName, String bTitle, String bContent) {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			
+			String query = "insert into mvc_board (bName, bTitle, bContent, bDate) values (?, ?, ?, now())";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, bName);
+			preparedStatement.setString(2, bTitle);
+			preparedStatement.setString(3, bContent);
+			preparedStatement.executeUpdate();
+			
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			}catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+	}
 	
 }//-----
