@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.mibbda.jieun.notice.update.Notice_Update_Dao">
+	
+	<select id="NoticeContentView" resultType="com.mibbda.jieun.notice.update.Notice_Update_Dto">
+		SELECT * FROM NOTICE WHERE NSEQNO = (#{param1})
+	</select>
+	
+	<update id="NoticeModifyDao">
+		UPDATE NOTICE SET ADMIN_ADMINID = #{param1}, NTITLE = #{param2}, NCONTENT = #{param3}, 
+		NDATE = NOW() WHERE NSEQNO = #{param5}
+	</update>
+	
+</mapper>
