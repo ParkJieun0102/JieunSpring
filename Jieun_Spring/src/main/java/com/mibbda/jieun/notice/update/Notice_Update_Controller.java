@@ -24,7 +24,7 @@ public class Notice_Update_Controller {
 	public String contentView(HttpServletRequest request, Model model){
 
 		Notice_Update_Dao dao = sqlSession.getMapper(Notice_Update_Dao.class);	
-		model.addAttribute("noticeView", dao.NoticeContentView(request.getParameter("nSeqno")));
+		model.addAttribute("manaNoticeView", dao.NoticeContentView(request.getParameter("nSeqno")));
 		return "notice_admin/manaViewNotice";
 	}
 	

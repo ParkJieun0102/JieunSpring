@@ -9,4 +9,8 @@
 		SELECT * FROM NOTICE ORDER BY NSEQNO DESC
 	</select>
 	
+	
+	<select id="NoticeContentView" resultType="com.mibbda.jieun.notice.userselect.Notice_UserSelect_Dto">
+		SELECT * FROM NOTICE WHERE NSEQNO = (#{param1})
+	</select>
 </mapper>

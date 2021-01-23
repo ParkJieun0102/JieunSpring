@@ -77,19 +77,19 @@ height: 36px;
 		<form action="updateNotice" method="post">
 			<tr>
 				<td>번호</td>
-				<td><input type="text" name="nSeqno" size="10" value="${noticeView.nSeqno}" readonly="readonly"></td>
+				<td><input type="text" name="nSeqno" size="10" value="${manaNoticeView.nSeqno}" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="admin_adminId" size="30" value="${noticeView.admin_adminId}"></td>
+				<td><input type="text" name="admin_adminId" size="30" value="${manaNoticeView.admin_adminId}"></td>
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="nTitle" size="50" value="${noticeView.nTitle}"></td> 
+				<td><input type="text" name="nTitle" size="50" value="${manaNoticeView.nTitle}"></td> 
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="10" cols="50" name="nContent">${noticeView.nContent}</textarea></td> 
+				<td><textarea rows="10" cols="50" name="nContent">${manaNoticeView.nContent}</textarea></td> 
 			</tr>
 			<tr>
 			<td colspan="2">

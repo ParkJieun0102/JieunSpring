@@ -41,20 +41,20 @@ textarea:focus {outline:none;}
 		<form method="post">
 			<tr>
 				<th style="width: 100px; height: 30px;">번호</th>
-				<td style="width: 200px"><input type = "text" name = "nSeqno" size = "10" value="${noticeView.nSeqno}" readonly="readonly"></td>
+				<td style="width: 200px"><input type = "text" name = "nSeqno" size = "10" value="${userNoticeView.nSeqno}" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<th style="height: 30px;"> 작성 날짜</th>
-				<td> <input type = "text" name = "nDate" size = "30" value="${noticeView.nDate}" readonly="readonly"></td>
+				<td> <input type = "text" name = "nDate" size = "30" value="${userNoticeView.nDate}" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<th style="height: 30px;">제목</th>
-				<td><input type = "text" name = "nTitle" size = "50" value="${noticeView.nTitle}" readonly="readonly"></td>
+				<td><input type = "text" name = "nTitle" size = "50" value="${userNoticeView.nTitle}" readonly="readonly"></td>
 			</tr>
 			
 			<tr>
 				<th style="height: 30px;">내용</th>
-				<td><textarea style="resize: none;" rows="20" cols="90"  name="nContent" readonly="readonly">${noticeView.nContent}</textarea></td>
+				<td><textarea style="resize: none;" rows="20" cols="90"  name="nContent" readonly="readonly">${userNoticeView.nContent}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2"><button type="button" style="height:30px; width:80px; font-size:15px; font-family:돋움; background-color:#eff7f9; border:1 solid #A0DBE4" onclick="location.href='noticeList.five'">&nbsp; 목 록 &nbsp;</button></td>

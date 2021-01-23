@@ -1,10 +1,14 @@
 package com.mibbda.jieun.notice.userselect;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mibbda.jieun.notice.update.Notice_Update_Dao;
 
 
 // 지은 21.01.22 추가
@@ -28,5 +32,13 @@ public class Notice_UserSelect_Controller {
 		return "notice_user/noticeList";
 	}
 
+	
+	@RequestMapping("noticeView")
+	public String contentView(HttpServletRequest request, Model model){
+
+		Notice_Update_Dao dao = sqlSession.getMapper(Notice_Update_Dao.class);	
+		model.addAttribute("userNoticeView", dao.NoticeContentView(request.getParameter("nSeqno")));
+		return "notice_user/noticeView";
+	}
 	
 }
