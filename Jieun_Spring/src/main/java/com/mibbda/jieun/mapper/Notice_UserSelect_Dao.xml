@@ -5,12 +5,18 @@
 	
 <mapper namespace="com.mibbda.jieun.notice.userselect.Notice_UserSelect_Dao">
 	
+	<!-- 공지사항 리스트 보기 -->
 	<select id="NoticeUserListDao" resultType="com.mibbda.jieun.notice.userselect.Notice_UserSelect_Dto">
 		SELECT * FROM NOTICE ORDER BY NSEQNO DESC
 	</select>
 	
-	
+	<!-- 공지사항 상세보기 -->
 	<select id="NoticeContentView" resultType="com.mibbda.jieun.notice.userselect.Notice_UserSelect_Dto">
 		SELECT * FROM NOTICE WHERE NSEQNO = (#{param1})
+	</select>
+	
+	<!-- 검색결과 보기 -->
+	<select id="NoticeUserQuery" parameterType = "String" resultType="com.mibbda.jieun.notice.userselect.Notice_UserSelect_Dto">
+		SELECT * FROM NOTICE WHERE ${param1} LIKE CONCAT('%',#{param2},'%') ORDER BY NSEQNO DESC
 	</select>
 </mapper>

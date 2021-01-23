@@ -69,6 +69,15 @@ text-align: center;
 <%request.setCharacterEncoding("utf-8"); %>
 <div id="notice">
 <h2>&nbsp;공지사항</h2><br>
+<form action="UserNoticeSearch">
+			검색 선택 :
+			<select name="query">
+				<option value="nTitle" selected="selected">제목</option>
+			</select>&nbsp;&nbsp;&nbsp;
+			<input type="text" name="content" size="30" />
+			<input type="submit" value="검색">
+		</form>
+		<br>
 	<table>
 		<tr>
 			<th width="40px;">번호</th>

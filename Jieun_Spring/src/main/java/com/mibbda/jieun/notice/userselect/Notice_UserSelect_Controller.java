@@ -41,4 +41,13 @@ public class Notice_UserSelect_Controller {
 		return "notice_user/noticeView";
 	}
 	
+	
+	// 검색
+		@RequestMapping("/UserNoticeSearch")
+		public String listQuery(HttpServletRequest request, Model model) {
+			Notice_UserSelect_Dao dao = sqlSession.getMapper(Notice_UserSelect_Dao.class);
+			model.addAttribute("NoticeUserList", dao.NoticeUserQuery(request.getParameter("query"), request.getParameter("content")));
+			return "notice_user/noticeList";
+		}
+		
 }
