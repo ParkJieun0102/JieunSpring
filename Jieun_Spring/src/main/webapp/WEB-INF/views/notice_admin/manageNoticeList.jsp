@@ -109,9 +109,9 @@ margin-left:680px;
 <div id="notice">
 <h2>&nbsp;공지사항 목록</h2>
 <div id="home3"><a href="insertNoticeView">새로운 공지사항 등록</a></div>
-<form action="searchNotice.five">
+<form action="AdminNoticeSearch">
 			검색 선택 :
-			<select name="select">
+			<select name="query">
 				<option value="nTitle" selected="selected">제목</option>
 				<option value="admin_adminId">관리자 아이디</option>
 			</select>&nbsp;&nbsp;&nbsp;

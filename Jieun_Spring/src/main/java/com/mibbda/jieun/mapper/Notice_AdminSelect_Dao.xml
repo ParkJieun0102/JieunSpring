@@ -9,4 +9,8 @@
 		SELECT * FROM NOTICE ORDER BY NSEQNO DESC
 	</select>
 	
+	<select id="NoticeAdminQuery" parameterType = "String" resultType="com.mibbda.jieun.notice.adminselect.Notice_AdminSelect_Dto">
+		SELECT * FROM NOTICE WHERE ${param1} LIKE CONCAT('%',#{param2},'%') ORDER BY NSEQNO DESC
+	</select>
+	
 </mapper>
